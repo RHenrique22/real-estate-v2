@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Getter
+@Setter
 public class Apartment implements Property {
 
     @Id
@@ -21,21 +22,4 @@ public class Apartment implements Property {
     private String address;
     private String builder;
 
-    @Override
-    public Apartment setAddress(String address) {
-        this.address = address;
-        return this;
-    }
-
-    @Override
-    public Apartment setBuilder(String builder) {
-        this.builder = builder;
-        return this;
-    }
-
-    @Override
-    public Apartment setPrice(BigDecimal price) {
-        this.price = price;
-        return this;
-    }
 }

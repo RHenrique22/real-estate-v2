@@ -11,7 +11,8 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Composite {
+public class Composite implements Property {
+
     private List<Property> properties = new ArrayList<>();
 
     public void add(Property property) {
@@ -26,7 +27,8 @@ public class Composite {
         this.properties.remove(property);
     }
 
-    public BigDecimal getPrices() {
+    @Override
+    public BigDecimal getPrice() {
         BigDecimal total = BigDecimal.ZERO;
 
         for (Property property : this.properties) {

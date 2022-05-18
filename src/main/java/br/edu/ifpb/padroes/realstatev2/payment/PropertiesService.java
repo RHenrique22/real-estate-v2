@@ -18,20 +18,24 @@ public class PropertiesService {
 
     public void payProperties() {
 
-        this.composite.add(
-                new Apartment().setAddress("Rua x").setBuilder("Apartamento construtura")
-                               .setPrice(BigDecimal.valueOf(200000))
-                ,
-                new Bungalow().setAddress("Rua y").setBuilder("Bangalô construtura")
-                              .setPrice(BigDecimal.valueOf(150000))
-                ,
-                new Tenement().setAddress("Rua y").setBuilder("Cortiço construtura")
-                              .setPrice(BigDecimal.valueOf(100000))
-        );
+        Apartment apartment = new Apartment();
+        apartment.setAddress("Rua x");
+        apartment.setBuilder("Apartamento construtura");
+        apartment.setPrice(BigDecimal.valueOf(200000));
 
-        for (Property property: this.composite.getProperties()) {
-            paymentService.pay(property);
-        }
+        Bungalow bungalow = new Bungalow();
+        bungalow.setAddress("Rua y");
+        bungalow.setBuilder("Bangalô construtura");
+        bungalow.setPrice(BigDecimal.valueOf(150000));
+
+        Tenement tenament = new Tenement();
+        tenament.setAddress("Rua y");
+        tenament.setBuilder("Cortiço construtura");
+        tenament.setPrice(BigDecimal.valueOf(100000));
+
+        this.composite.add(apartment, bungalow, tenament);
+
+        paymentService.pay(this.composite.getProperties());
     }
 
 }
