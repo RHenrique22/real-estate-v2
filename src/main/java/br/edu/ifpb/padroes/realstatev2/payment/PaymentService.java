@@ -16,7 +16,6 @@ public class PaymentService {
     private final GovernmentTaxesPayment governmentTaxesPayment;
     private final RealEstatePayment      realEstatePayment;
     private final PropertyPayment        propertyPayment;
-    private       PaymentProcessor       process;
 
     public void pay(Property sale) {
         this.governmentTaxesPayment.next(realEstatePayment)
