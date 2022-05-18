@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class PaymentService {
 
     private final GovernmentTaxesPayment governmentTaxesPayment;
-    private final RealEstatePayment realEstatePayment;
-    private final PropertyPayment propertyPayment;
+    private final RealEstatePayment      realEstatePayment;
+    private final PropertyPayment        propertyPayment;
 
     public void pay(Property sale) {
 
